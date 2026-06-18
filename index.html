@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>MotoControl v2 - Resumen</title>
+    <title>MotoControl v2 - Dashboard</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -10,20 +10,12 @@
     <nav>
         <strong>MotoControl v2</strong> | <a href="index.html">Inicio</a> | <a href="graficas.html">Gráficas</a> | <a href="captura.html">Captura</a>
     </nav>
-
     <div class="container">
-        <div class="card">
-            <h3>Venta de Exhibición</h3>
-            <canvas id="chartExhibicion"></canvas>
-        </div>
-        <div class="card">
-            <h3>Venta en Línea</h3>
-            <canvas id="chartLinea"></canvas>
-        </div>
-        <div class="card">
-            <h3>Marca Top</h3>
-            <h2 id="marcaTop">--</h2>
-        </div>
+        <div class="card"><h3>Venta de Exhibición</h3><canvas id="chartExhibicion"></canvas></div>
+        <div class="card"><h3>Venta en Línea</h3><canvas id="chartLinea"></canvas></div>
+        <div class="card"><h3>Marca Top</h3><h2 id="marcaTop">--</h2></div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
