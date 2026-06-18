@@ -23,3 +23,32 @@ if (formCaptura) {
         else { alert('Venta guardada con éxito'); formCaptura.reset(); }
     });
 }
+// --- Lógica para Gráficas (Si estamos en index.html o graficas.html) ---
+async function cargarDatosParaGraficas() {
+    // 1. Obtener los datos desde Supabase
+    const { data: ventas, error } = await supabase
+        .from('ventas')
+        .select('*');
+
+    if (error) {
+        console.error('Error al obtener ventas:', error);
+        return;
+    }
+
+    // 2. Aquí procesarías los datos según lo que necesites
+    // Ejemplo: Contar ventas por marca
+    console.log("Datos recibidos:", ventas);
+    
+    // Si quieres actualizar algo en el DOM:
+    if(document.getElementById('marcaTop')) {
+        // Lógica simple para mostrar algo en el index
+        document.getElementById('marcaTop').innerText = ventas.length > 0 ? ventas[0].marca : "Sin datos";
+    }
+
+    // 3. Inicializar gráficas con Chart.js
+    // Ejemplo de cómo llamar a una gráfica:
+    // renderizarGrafica(ventas);
+}
+
+// Ejecutar la carga cuando la página cargue
+window.onload = cargarDatosParaGraficas;
