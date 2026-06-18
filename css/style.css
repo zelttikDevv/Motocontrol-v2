@@ -1,0 +1,11 @@
+body { font-family: 'Segoe UI', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; }
+nav { background: #333; padding: 1rem; color: white; border-radius: 8px; margin-bottom: 20px; }
+nav a { color: white; text-decoration: none; margin-right: 15px; }
+
+.container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+/* Formulario */
+form { display: flex; flex-direction: column; max-width: 500px; margin: auto; }
+input, select { margin-bottom: 15px; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+button { background: #28a745; color: white; border: none; padding: 10px; cursor: pointer; border-radius: 5px; }
