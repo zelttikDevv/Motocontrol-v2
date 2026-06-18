@@ -52,3 +52,44 @@ async function cargarDatosParaGraficas() {
 
 // Ejecutar la carga cuando la página cargue
 window.onload = cargarDatosParaGraficas;
+
+// Función para procesar y mostrar gráficas
+async function cargarYRenderizarGraficas() {
+    const { data: ventas, error } = await supabase.from('ventas').select('*');
+    
+    if (error || !ventas.length) {
+        console.error('No se pudieron cargar datos o no hay ventas', error);
+        return;
+    }
+
+    // 1. Agrupar ventas por marca para la gráfica
+    const conteoMarcas = ventas.reduce((acc, venta) => {
+        acc[venta.marca] = (acc[venta.marca] || 0) + 1;
+        return acc;
+    }, {});
+
+    // 2. Renderizar Gráfica si existe el canvas
+    const ctx = document.getElementById('graficoIngresos');
+    if (ctx) {
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: Object.keys(conteoMarcas),
+                datasets: [{
+                    label: 'Ventas por Marca',
+                    data: Object.values(conteoMarcas),
+                    backgroundColor: '#28a745'
+                }]
+            },
+            options: { responsive: true }
+        });
+    }
+}
+
+// Ejecutar al cargar la página
+window.onload = () => {
+    if (document.getElementById('graficoIngresos')) {
+        cargarYRenderizarGraficas();
+    }
+};
+
