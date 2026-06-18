@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gráficas - MotoControl v2</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav>
+        <strong>MotoControl v2</strong> | <a href="index.html">Inicio</a> | <a href="graficas.html">Gráficas</a> | <a href="captura.html">Captura</a>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <h3>Filtros de Análisis</h3>
+            <select id="filtroTiempo">
+                <option value="semana">Esta Semana</option>
+                <option value="mes">Este Mes</option>
+            </select>
+        </div>
+        <div class="card" style="grid-column: span 2;">
+            <canvas id="graficoIngresos"></canvas>
+        </div>
+    </div>
+</body>
+</html>
