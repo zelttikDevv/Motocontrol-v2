@@ -1,28 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Captura de Venta</title>
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Captura</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
+
 <body>
-    <nav>
-        <a href="index.html">Inicio</a> | <a href="graficas.html">Gráficas</a> | <a href="captura.html">Captura</a>
-    </nav>
-    <form id="formCaptura" class="card" style="max-width: 500px; margin: auto;">
-        <h2>Registrar Venta</h2>
-        <input type="text" id="sku" placeholder="SKU" required>
-        <input type="text" id="cliente" placeholder="Nombre del Cliente" required>
-        <select id="marca"><option value="Italika">Italika</option><option value="Honda">Honda</option></select>
-        <input type="text" id="cilindraje" placeholder="Cilindraje" required>
-        <select id="segmento"><option value="ciudad">Ciudad</option><option value="deportiva">Deportiva</option></select>
-        <input type="number" id="costo" placeholder="Costo con IVA" required>
-        <select id="tipoVenta"><option value="contado">Contado</option><option value="credito">Crédito</option></select>
-        <select id="seguro"><option value="sin">Sin seguro</option><option value="plus">Seguro Plus</option></select>
-        <input type="date" id="fecha" required>
-        <button type="submit">Guardar Registro</button>
-    </form>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="js/main.js"></script>
+
+<nav>
+    <strong>MotoControl v2</strong>
+
+    <div>
+        <a href="index.html">Dashboard</a>
+        <a href="graficas.html">Gráficas</a>
+        <a href="captura.html">Captura</a>
+    </div>
+</nav>
+
+<form id="formCaptura" class="card formulario">
+
+<h2>Registrar Venta</h2>
+
+<input type="text" id="sku" placeholder="SKU" required>
+
+<input type="text" id="cliente" placeholder="Cliente" required>
+
+<select id="marca">
+    <option value="Italika">Italika</option>
+    <option value="Honda">Honda</option>
+    <option value="Vento">Vento</option>
+    <option value="Yamaha">Yamaha</option>
+</select>
+
+<input type="text" id="cilindraje" placeholder="Cilindraje" required>
+
+<select id="segmento">
+    <option value="Ciudad">Ciudad</option>
+    <option value="Deportiva">Deportiva</option>
+    <option value="Trabajo">Trabajo</option>
+</select>
+
+<input type="number" id="costo" placeholder="Costo con IVA" required>
+
+<select id="tipoVenta">
+    <option value="Contado">Contado</option>
+    <option value="Credito">Credito</option>
+</select>
+
+<select id="seguro">
+    <option value="Sin">Sin seguro</option>
+    <option value="Plus">Seguro Plus</option>
+</select>
+
+<input type="date" id="fecha" required>
+
+<button type="submit">
+Guardar Venta
+</button>
+
+</form>
+
+<script src="js/main.js"></script>
+
 </body>
 </html>
