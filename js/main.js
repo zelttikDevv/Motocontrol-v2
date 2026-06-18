@@ -1,16 +1,13 @@
-// Inicialización del cliente Supabase
 const supabaseUrl = 'https://dlxlhjuhyfaehpdxviua.supabase.co';
 const supabaseKey = 'sb_publishable_u0VAAueof0hx_AG8bGlNVQ_x_Rr8zHT';
 const supabase = supabase.createClient(supabaseUrl, supabaseKey);
 
-// --- Lógica de Captura (Si estás en la página de captura) ---
+// Captura de datos
 const formCaptura = document.getElementById('formCaptura');
 if (formCaptura) {
     formCaptura.addEventListener('submit', async (e) => {
         e.preventDefault();
-
-        // Obtener datos del formulario
-        const nuevaVenta = {
+        const datos = {
             sku: document.getElementById('sku').value,
             cliente: document.getElementById('cliente').value,
             marca: document.getElementById('marca').value,
@@ -21,16 +18,8 @@ if (formCaptura) {
             seguro: document.getElementById('seguro').value,
             fecha_venta: document.getElementById('fecha').value
         };
-
-        // Insertar en Supabase
-        const { data, error } = await supabase.from('ventas').insert([nuevaVenta]);
-
-        if (error) {
-            console.error('Error:', error);
-            alert('Error al guardar: ' + error.message);
-        } else {
-            alert('¡Venta registrada con éxito!');
-            formCaptura.reset();
-        }
+        const { error } = await supabase.from('ventas').insert([datos]);
+        if (error) { alert('Error: ' + error.message); } 
+        else { alert('Venta guardada con éxito'); formCaptura.reset(); }
     });
 }
