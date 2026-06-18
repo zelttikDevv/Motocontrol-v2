@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Captura de Venta - MotoControl v2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <strong>MotoControl v2</strong> | <a href="index.html">Inicio</a> | <a href="graficas.html">Gráficas</a> | <a href="captura.html">Captura</a>
+    </nav>
+
+    <div class="card" style="max-width: 600px; margin: auto;">
+        <h2>Registrar Nueva Venta</h2>
+        <form id="formCaptura">
+            <input type="text" id="sku" placeholder="SKU" required>
+            <input type="text" id="cliente" placeholder="Nombre del Cliente" required>
+            
+            <select id="marca">
+                <option value="">Seleccionar Marca</option>
+                <option value="Vento">Vento</option>
+                <option value="Bajaj">Bajaj</option>
+            </select>
+
+            <input type="text" id="cilindraje" placeholder="Cilindraje (ej. 250cc)" required>
+            
+            <select id="segmento">
+                <option value="ciudad">Ciudad</option>
+                <option value="motoneta">Motoneta</option>
+                <option value="trabajo">Trabajo</option>
+                <option value="deportiva">Deportiva</option>
+            </select>
+
+            <input type="number" id="costo" placeholder="Costo (IVA incluido)" required>
+            
+            <select id="tipoVenta">
+                <option value="contado">Contado</option>
+                <option value="credito">Crédito</option>
+            </select>
+
+            <select id="seguro">
+                <option value="sin">Sin seguro</option>
+                <option value="plus">Seguro Plus</option>
+                <option value="rc">Seguro RC</option>
+            </select>
+
+            <input type="date" id="fecha" required>
+            
+            <button type="submit">Guardar Registro</button>
+        </form>
+    </div>
+</body>
+</html>
